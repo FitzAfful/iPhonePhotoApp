@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		846DB5D82458BCD800507E56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5D72458BCD800507E56 /* AppDelegate.swift */; };
+		846DB5DA2458BCD800507E56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5D92458BCD800507E56 /* SceneDelegate.swift */; };
+		846DB5DC2458BCD800507E56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5DB2458BCD800507E56 /* ContentView.swift */; };
+		846DB5DE2458BCDA00507E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5DD2458BCDA00507E56 /* Assets.xcassets */; };
+		846DB5E12458BCDB00507E56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5E02458BCDB00507E56 /* Preview Assets.xcassets */; };
+		846DB5E42458BCDB00507E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5E22458BCDB00507E56 /* LaunchScreen.storyboard */; };
+		846DB5EF2458BCDB00507E56 /* iPhonePhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */; };
+		846DB5FA2458BCDB00507E56 /* iPhonePhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5F92458BCDB00507E56 /* iPhonePhotoAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		846DB5EB2458BCDB00507E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846DB5CC2458BCD800507E56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846DB5D32458BCD800507E56;
+			remoteInfo = iPhonePhotoApp;
+		};
+		846DB5F62458BCDB00507E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846DB5CC2458BCD800507E56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846DB5D32458BCD800507E56;
+			remoteInfo = iPhonePhotoApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		846DB5D42458BCD800507E56 /* iPhonePhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhonePhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		846DB5D72458BCD800507E56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		846DB5D92458BCD800507E56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		846DB5DB2458BCD800507E56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		846DB5DD2458BCDA00507E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846DB5E02458BCDB00507E56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		846DB5E32458BCDB00507E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		846DB5E52458BCDB00507E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846DB5EA2458BCDB00507E56 /* iPhonePhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhonePhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePhotoAppTests.swift; sourceTree = "<group>"; };
+		846DB5F02458BCDB00507E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846DB5F52458BCDB00507E56 /* iPhonePhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhonePhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846DB5F92458BCDB00507E56 /* iPhonePhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePhotoAppUITests.swift; sourceTree = "<group>"; };
+		846DB5FB2458BCDB00507E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		846DB5D12458BCD800507E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5E72458BCDB00507E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5F22458BCDB00507E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846DB5CB2458BCD800507E56 = {
+			isa = PBXGroup;
+			children = (
+				846DB5D62458BCD800507E56 /* iPhonePhotoApp */,
+				846DB5ED2458BCDB00507E56 /* iPhonePhotoAppTests */,
+				846DB5F82458BCDB00507E56 /* iPhonePhotoAppUITests */,
+				846DB5D52458BCD800507E56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		846DB5D52458BCD800507E56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846DB5D42458BCD800507E56 /* iPhonePhotoApp.app */,
+				846DB5EA2458BCDB00507E56 /* iPhonePhotoAppTests.xctest */,
+				846DB5F52458BCDB00507E56 /* iPhonePhotoAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		846DB5D62458BCD800507E56 /* iPhonePhotoApp */ = {
+			isa = PBXGroup;
+			children = (
+				846DB5D72458BCD800507E56 /* AppDelegate.swift */,
+				846DB5D92458BCD800507E56 /* SceneDelegate.swift */,
+				846DB5DB2458BCD800507E56 /* ContentView.swift */,
+				846DB5DD2458BCDA00507E56 /* Assets.xcassets */,
+				846DB5E22458BCDB00507E56 /* LaunchScreen.storyboard */,
+				846DB5E52458BCDB00507E56 /* Info.plist */,
+				846DB5DF2458BCDB00507E56 /* Preview Content */,
+			);
+			path = iPhonePhotoApp;
+			sourceTree = "<group>";
+		};
+		846DB5DF2458BCDB00507E56 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				846DB5E02458BCDB00507E56 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		846DB5ED2458BCDB00507E56 /* iPhonePhotoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */,
+				846DB5F02458BCDB00507E56 /* Info.plist */,
+			);
+			path = iPhonePhotoAppTests;
+			sourceTree = "<group>";
+		};
+		846DB5F82458BCDB00507E56 /* iPhonePhotoAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				846DB5F92458BCDB00507E56 /* iPhonePhotoAppUITests.swift */,
+				846DB5FB2458BCDB00507E56 /* Info.plist */,
+			);
+			path = iPhonePhotoAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		846DB5D32458BCD800507E56 /* iPhonePhotoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846DB5FE2458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoApp" */;
+			buildPhases = (
+				846DB5D02458BCD800507E56 /* Sources */,
+				846DB5D12458BCD800507E56 /* Frameworks */,
+				846DB5D22458BCD800507E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPhonePhotoApp;
+			productName = iPhonePhotoApp;
+			productReference = 846DB5D42458BCD800507E56 /* iPhonePhotoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		846DB5E92458BCDB00507E56 /* iPhonePhotoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846DB6012458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoAppTests" */;
+			buildPhases = (
+				846DB5E62458BCDB00507E56 /* Sources */,
+				846DB5E72458BCDB00507E56 /* Frameworks */,
+				846DB5E82458BCDB00507E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846DB5EC2458BCDB00507E56 /* PBXTargetDependency */,
+			);
+			name = iPhonePhotoAppTests;
+			productName = iPhonePhotoAppTests;
+			productReference = 846DB5EA2458BCDB00507E56 /* iPhonePhotoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		846DB5F42458BCDB00507E56 /* iPhonePhotoAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846DB6042458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoAppUITests" */;
+			buildPhases = (
+				846DB5F12458BCDB00507E56 /* Sources */,
+				846DB5F22458BCDB00507E56 /* Frameworks */,
+				846DB5F32458BCDB00507E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846DB5F72458BCDB00507E56 /* PBXTargetDependency */,
+			);
+			name = iPhonePhotoAppUITests;
+			productName = iPhonePhotoAppUITests;
+			productReference = 846DB5F52458BCDB00507E56 /* iPhonePhotoAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		846DB5CC2458BCD800507E56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Fitzgerald Afful";
+				TargetAttributes = {
+					846DB5D32458BCD800507E56 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					846DB5E92458BCDB00507E56 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 846DB5D32458BCD800507E56;
+					};
+					846DB5F42458BCDB00507E56 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 846DB5D32458BCD800507E56;
+					};
+				};
+			};
+			buildConfigurationList = 846DB5CF2458BCD800507E56 /* Build configuration list for PBXProject "iPhonePhotoApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 846DB5CB2458BCD800507E56;
+			productRefGroup = 846DB5D52458BCD800507E56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				846DB5D32458BCD800507E56 /* iPhonePhotoApp */,
+				846DB5E92458BCDB00507E56 /* iPhonePhotoAppTests */,
+				846DB5F42458BCDB00507E56 /* iPhonePhotoAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		846DB5D22458BCD800507E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846DB5E42458BCDB00507E56 /* LaunchScreen.storyboard in Resources */,
+				846DB5E12458BCDB00507E56 /* Preview Assets.xcassets in Resources */,
+				846DB5DE2458BCDA00507E56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5E82458BCDB00507E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5F32458BCDB00507E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		846DB5D02458BCD800507E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846DB5D82458BCD800507E56 /* AppDelegate.swift in Sources */,
+				846DB5DA2458BCD800507E56 /* SceneDelegate.swift in Sources */,
+				846DB5DC2458BCD800507E56 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5E62458BCDB00507E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846DB5EF2458BCDB00507E56 /* iPhonePhotoAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846DB5F12458BCDB00507E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846DB5FA2458BCDB00507E56 /* iPhonePhotoAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		846DB5EC2458BCDB00507E56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846DB5D32458BCD800507E56 /* iPhonePhotoApp */;
+			targetProxy = 846DB5EB2458BCDB00507E56 /* PBXContainerItemProxy */;
+		};
+		846DB5F72458BCDB00507E56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846DB5D32458BCD800507E56 /* iPhonePhotoApp */;
+			targetProxy = 846DB5F62458BCDB00507E56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		846DB5E22458BCDB00507E56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846DB5E32458BCDB00507E56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		846DB5FC2458BCDB00507E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		846DB5FD2458BCDB00507E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		846DB5FF2458BCDB00507E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iPhonePhotoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iPhonePhotoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		846DB6002458BCDB00507E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iPhonePhotoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iPhonePhotoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		846DB6022458BCDB00507E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				INFOPLIST_FILE = iPhonePhotoAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPhonePhotoApp.app/iPhonePhotoApp";
+			};
+			name = Debug;
+		};
+		846DB6032458BCDB00507E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				INFOPLIST_FILE = iPhonePhotoAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPhonePhotoApp.app/iPhonePhotoApp";
+			};
+			name = Release;
+		};
+		846DB6052458BCDB00507E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				INFOPLIST_FILE = iPhonePhotoAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPhonePhotoApp;
+			};
+			name = Debug;
+		};
+		846DB6062458BCDB00507E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB8J435J;
+				INFOPLIST_FILE = iPhonePhotoAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.iPhonePhotoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPhonePhotoApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		846DB5CF2458BCD800507E56 /* Build configuration list for PBXProject "iPhonePhotoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846DB5FC2458BCDB00507E56 /* Debug */,
+				846DB5FD2458BCDB00507E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846DB5FE2458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846DB5FF2458BCDB00507E56 /* Debug */,
+				846DB6002458BCDB00507E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846DB6012458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846DB6022458BCDB00507E56 /* Debug */,
+				846DB6032458BCDB00507E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846DB6042458BCDB00507E56 /* Build configuration list for PBXNativeTarget "iPhonePhotoAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846DB6052458BCDB00507E56 /* Debug */,
+				846DB6062458BCDB00507E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 846DB5CC2458BCD800507E56 /* Project object */;
+}
