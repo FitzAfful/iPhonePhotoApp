@@ -19,6 +19,27 @@ struct VideoDetailView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color.gray)
+                        .opacity(0.3)
+                        .frame(width: 345.0, height: 8.0)
+                    Rectangle()
+                        .foregroundColor(Color.blue)
+                        .frame(width: 200.0, height: 8.0)
+                }
+                Button(action: {
+                    if self.viewModel.getCurrentVideo() != nil {
+                        self.showingAlert = true
+                    } else {
+                        self.viewModel.downloadVideo()
+                    }
+                }) {
+                    Text("Cancel Download")
+                }
+            }
+            .cornerRadius(4.0)
             ZStack {
                 image.view?
                     .resizable()

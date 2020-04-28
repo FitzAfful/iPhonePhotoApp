@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 class VideoItem: Object, Codable, Identifiable {
-    @objc var id: Int = 0
-    @objc var name: String = ""
-    @objc var thumbnail: String = ""
-    @objc var details: String = ""
-    @objc var videoLink: String = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var thumbnail: String = ""
+    @objc dynamic var details: String = ""
+    @objc dynamic var videoLink: String = ""
 
     convenience init(id: Int, name: String, thumbnail: String, details: String, videoLink: String) {
         self.init()

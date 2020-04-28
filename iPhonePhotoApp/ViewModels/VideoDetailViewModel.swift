@@ -18,21 +18,31 @@ protocol VideoDetailViewModelProtocol {
 class VideoDetailViewModel: ObservableObject {
     @Published var video: VideoItem?
 
-    var dataManager: DataManagerProtocol
+    var downloadManager: DownloadManager!
 
-    init(dataManager: DataManagerProtocol = APIManager.shared) {
-        self.dataManager = dataManager
+    init(downloadManager: DownloadManager = DownloadManager.shared) {
+        self.downloadManager = downloadManager
+        _ = downloadManager.$percentage.sink { (value) in
+            if self.getCurrentVideo() == self.video && self.getCurrentVideo() != nil {
+                //update progressbar
+                print("\(self.video!.name) - \(value)%")
+            }
+        }
     }
 }
 
 extension VideoDetailViewModel: VideoDetailViewModelProtocol {
     func downloadVideo() {
         guard let myVideo = self.video else { return }
-        dataManager.downloadVideo(video: myVideo)
+        downloadManager.downloadVideo(video: myVideo)
+    }
+
+    func cancelDownload() {
+
     }
 
     func getCurrentVideo() -> VideoItem? {
-        if let currentVideo = dataManager.getCurrentDownload() {
+        if let currentVideo = downloadManager.getCurrentDownload() {
             return currentVideo
         }
         return nil
@@ -41,4 +51,5 @@ extension VideoDetailViewModel: VideoDetailViewModelProtocol {
     func getVideo() -> VideoItem {
         return video!
     }
+
 }

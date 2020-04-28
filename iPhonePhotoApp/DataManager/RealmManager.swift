@@ -35,11 +35,4 @@ public class RealmManager: NSObject, DataManagerProtocol {
             myRealm.add(videos, update: .all)
         }
     }
-
-    func downloadVideo(video: VideoItem) {
-    }
-
-    func getCurrentDownload() -> VideoItem? {
-        return nil
-    }
 }

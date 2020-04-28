@@ -31,11 +31,11 @@ class VideoListViewModel: ObservableObject {
 extension VideoListViewModel: VideoListViewModelProtocol {
     func fetchVideos() {
         isLoading = true
-        /*realmManager.fetchVideos { (result) in
+        try? realmManager.fetchVideos { (result) in
             if let realmVideos = try? result.get().videos {
                 self.videos = realmVideos
             }
-        }*/
+        }
         try? dataManager.fetchVideos { (result) in
             switch result {
             case .success(let response):

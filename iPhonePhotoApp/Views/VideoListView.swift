@@ -38,8 +38,6 @@ struct VideoCell: View {
 
     init(video: VideoItem) {
         self.video = video
-        print(video)
-        print(video.thumbnail)
         let url = URL(string: video.thumbnail)!
         self.image = FetchImage(url: url)
     }
