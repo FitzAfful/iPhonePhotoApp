@@ -11,6 +11,7 @@ import RealmSwift
 
 enum RuntimeError: Error {
     case NoRealmSet
+    case FetchFailed
 }
 
 public class RealmManager: NSObject, DataManagerProtocol {

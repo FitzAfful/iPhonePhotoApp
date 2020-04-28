@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import AVKit
 
-typealias FetchVideosCompletionHandler = (_ songs: Result<VideoResponse, AFError>) -> Void
+typealias FetchVideosCompletionHandler = (_ videoResponse: Result<VideoResponse, AFError>) -> Void
 
 protocol DataManagerProtocol {
     func fetchVideos(completionHandler: @escaping FetchVideosCompletionHandler) throws
