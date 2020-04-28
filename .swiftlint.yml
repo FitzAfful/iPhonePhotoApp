@@ -1,5 +1,5 @@
 included:
-  - SwiftUITutorials
+  - iPhonePhotoApp
 
 disabled_rules:
   - identifier_name
