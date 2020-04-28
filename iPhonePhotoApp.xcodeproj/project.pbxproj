@@ -14,13 +14,17 @@
 		846DB5DE2458BCDA00507E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5DD2458BCDA00507E56 /* Assets.xcassets */; };
 		846DB5E12458BCDB00507E56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5E02458BCDB00507E56 /* Preview Assets.xcassets */; };
 		846DB5E42458BCDB00507E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846DB5E22458BCDB00507E56 /* LaunchScreen.storyboard */; };
-		846DB5EF2458BCDB00507E56 /* iPhonePhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */; };
 		846DB5FA2458BCDB00507E56 /* iPhonePhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB5F92458BCDB00507E56 /* iPhonePhotoAppUITests.swift */; };
 		846DB6092458BE6900507E56 /* Rotoscope in Frameworks */ = {isa = PBXBuildFile; productRef = 846DB6082458BE6900507E56 /* Rotoscope */; };
 		846DB6112458BFE100507E56 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB6102458BFE100507E56 /* VideoItem.swift */; };
 		846DB6132458C1C900507E56 /* VideoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB6122458C1C900507E56 /* VideoItemTests.swift */; };
 		846DB6162458C2F000507E56 /* videoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 846DB6142458C2F000507E56 /* videoResponse.json */; };
 		846DB6172458C2F000507E56 /* videoItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 846DB6152458C2F000507E56 /* videoItem.json */; };
+		846DB6192458C40500507E56 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB6182458C40500507E56 /* APIRouter.swift */; };
+		846DB61B2458C4F300507E56 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB61A2458C4F300507E56 /* APIManager.swift */; };
+		846DB61D2458C5D000507E56 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB61C2458C5D000507E56 /* RealmManager.swift */; };
+		846DB6212458C66100507E56 /* RealmManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB6202458C66100507E56 /* RealmManagerTests.swift */; };
+		846DB6232458D03F00507E56 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB6222458D03F00507E56 /* APIManagerTests.swift */; };
 		D6415C7E3118810570C30C68 /* Pods_iPhonePhotoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BE0551929B33D7ADE3A76 /* Pods_iPhonePhotoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +58,6 @@
 		846DB5E32458BCDB00507E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846DB5E52458BCDB00507E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846DB5EA2458BCDB00507E56 /* iPhonePhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhonePhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePhotoAppTests.swift; sourceTree = "<group>"; };
 		846DB5F02458BCDB00507E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846DB5F52458BCDB00507E56 /* iPhonePhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhonePhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846DB5F92458BCDB00507E56 /* iPhonePhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePhotoAppUITests.swift; sourceTree = "<group>"; };
@@ -63,6 +66,11 @@
 		846DB6122458C1C900507E56 /* VideoItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemTests.swift; sourceTree = "<group>"; };
 		846DB6142458C2F000507E56 /* videoResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoResponse.json; sourceTree = "<group>"; };
 		846DB6152458C2F000507E56 /* videoItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoItem.json; sourceTree = "<group>"; };
+		846DB6182458C40500507E56 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		846DB61A2458C4F300507E56 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		846DB61C2458C5D000507E56 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		846DB6202458C66100507E56 /* RealmManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerTests.swift; sourceTree = "<group>"; };
+		846DB6222458D03F00507E56 /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		933AFBF4EBA6C771348D4592 /* Pods_iPhonePhotoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhonePhotoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999507A444F0BA284181EB1B /* Pods-iPhonePhotoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhonePhotoAppTests.release.xcconfig"; path = "Target Support Files/Pods-iPhonePhotoAppTests/Pods-iPhonePhotoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9EBEAEF994D6A7C7F7BCCA3E /* Pods-iPhonePhotoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhonePhotoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iPhonePhotoAppTests/Pods-iPhonePhotoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,11 +156,12 @@
 		846DB5ED2458BCDB00507E56 /* iPhonePhotoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				846DB6122458C1C900507E56 /* VideoItemTests.swift */,
+				846DB6202458C66100507E56 /* RealmManagerTests.swift */,
+				846DB6222458D03F00507E56 /* APIManagerTests.swift */,
+				846DB5F02458BCDB00507E56 /* Info.plist */,
 				846DB6152458C2F000507E56 /* videoItem.json */,
 				846DB6142458C2F000507E56 /* videoResponse.json */,
-				846DB5EE2458BCDB00507E56 /* iPhonePhotoAppTests.swift */,
-				846DB5F02458BCDB00507E56 /* Info.plist */,
-				846DB6122458C1C900507E56 /* VideoItemTests.swift */,
 			);
 			path = iPhonePhotoAppTests;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 		846DB60C2458BF9300507E56 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				846DB6182458C40500507E56 /* APIRouter.swift */,
+				846DB61A2458C4F300507E56 /* APIManager.swift */,
+				846DB61C2458C5D000507E56 /* RealmManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -446,9 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846DB61B2458C4F300507E56 /* APIManager.swift in Sources */,
 				846DB6112458BFE100507E56 /* VideoItem.swift in Sources */,
+				846DB6192458C40500507E56 /* APIRouter.swift in Sources */,
 				846DB5D82458BCD800507E56 /* AppDelegate.swift in Sources */,
 				846DB5DA2458BCD800507E56 /* SceneDelegate.swift in Sources */,
+				846DB61D2458C5D000507E56 /* RealmManager.swift in Sources */,
 				846DB5DC2458BCD800507E56 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,7 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				846DB6132458C1C900507E56 /* VideoItemTests.swift in Sources */,
-				846DB5EF2458BCDB00507E56 /* iPhonePhotoAppTests.swift in Sources */,
+				846DB6212458C66100507E56 /* RealmManagerTests.swift in Sources */,
+				846DB6232458D03F00507E56 /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
