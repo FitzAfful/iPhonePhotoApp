@@ -11,7 +11,6 @@ import XCTest
 
 class VideoListViewModelTests: XCTestCase {
 
-
     var sut: VideoListViewModel!
     var mockAPIManager: MockApiManager!
 

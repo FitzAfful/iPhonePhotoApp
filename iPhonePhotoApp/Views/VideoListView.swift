@@ -47,7 +47,7 @@ struct VideoCell: View {
     var body: some View {
         let viewModel = VideoDetailViewModel()
         viewModel.video = self.video
-        return NavigationLink(destination: DetailView(viewModel: viewModel, image: image).environmentObject(PlayerState())) {
+        return NavigationLink(destination: VideoDetailView(viewModel: viewModel, image: image).environmentObject(PlayerState())) {
             image.view?.resizable()
             .frame(width: 50.0, height: 50.0).cornerRadius(5.0)
             VStack(alignment: .leading) {
@@ -56,4 +56,3 @@ struct VideoCell: View {
         }
     }
 }
-
