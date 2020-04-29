@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import iPhonePhotoApp
+@testable import RealmSwift
 
 class VideoListViewModelTests: XCTestCase {
 
@@ -15,20 +16,25 @@ class VideoListViewModelTests: XCTestCase {
     var mockAPIManager: MockApiManager!
 
     override func setUpWithError() throws {
+
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        let config = Realm.Configuration(inMemoryIdentifier: self.name)
+        _ = try! Realm.deleteFiles(for: config)
+        let testRealm = try! Realm(configuration: config)
+        let realmManager = RealmManager()
+        realmManager.realm = testRealm
+
         mockAPIManager = MockApiManager()
         sut = VideoListViewModel(dataManager: mockAPIManager)
-    }
-
-    func testFetchVideos() {
-        sut.fetchVideos()
-        XCTAssert(mockAPIManager.isFetchVideosCalled)
+        sut.realmManager = realmManager
     }
 
     func testFetchVideosSuccess() {
         mockAPIManager.completeVideos = VideoResponse(videos: testData)
-        sut.fetchVideos()
+        sut.fetchAPIVideos()
         mockAPIManager.fetchSuccess()
 
+        print("Setup: \(sut.videos)")
         XCTAssert(!sut.videos.isEmpty)
         XCTAssert(!sut.isLoading)
         XCTAssert(!sut.returnedError)
@@ -36,7 +42,7 @@ class VideoListViewModelTests: XCTestCase {
     }
 
     func testFetchVideosFailure() {
-        sut.fetchVideos()
+        sut.fetchAPIVideos()
         mockAPIManager.fetchFail()
         XCTAssert(!sut.isLoading)
         XCTAssert(sut.returnedError)

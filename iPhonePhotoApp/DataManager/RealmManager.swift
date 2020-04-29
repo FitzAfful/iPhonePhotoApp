@@ -16,11 +16,7 @@ enum RuntimeError: Error {
 
 public class RealmManager: NSObject, DataManagerProtocol {
     static let shared: DataManagerProtocol = RealmManager()
-    private var realm: Realm?
-
-    override init() {
-        realm = try? Realm()
-    }
+    var realm: Realm? = try! Realm()
 
     func fetchVideos(completionHandler: @escaping FetchVideosCompletionHandler) throws {
         guard let myRealm = realm else { throw RuntimeError.NoRealmSet }
@@ -52,5 +48,13 @@ public class RealmManager: NSObject, DataManagerProtocol {
             return dlVideo.downloadLocation
         }
         return nil
+    }
+
+    func clearVideos() throws {
+        guard let myRealm = realm else { throw  RuntimeError.NoRealmSet }
+        let results = myRealm.objects(VideoItem.self)
+        try? myRealm.write {
+            myRealm.delete(results)
+        }
     }
 }

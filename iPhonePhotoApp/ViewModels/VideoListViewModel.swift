@@ -11,6 +11,7 @@ import Combine
 
 protocol VideoListViewModelProtocol {
     func fetchVideos()
+    func fetchAPIVideos()
 }
 
 class VideoListViewModel: ObservableObject {
@@ -42,19 +43,23 @@ extension VideoListViewModel: VideoListViewModelProtocol {
         }
 
         UtilityHelper().delay(delayTimer) {
-            try? self.dataManager.fetchVideos { (result) in
-                switch result {
-                case .success(let response):
-                    self.videos = response.videos
-                    try? self.realmManager.saveVideos(videos: self.videos)
-                    self.isLoading = false
-                    self.errorMessage = nil
-                    self.returnedError = false
-                case .failure:
-                    self.isLoading = false
-                    self.returnedError = true
-                    self.errorMessage = "Please check your internet connection and try again."
-                }
+            self.fetchAPIVideos()
+        }
+    }
+
+    func fetchAPIVideos() {
+        try? self.dataManager.fetchVideos { (result) in
+            switch result {
+            case .success(let response):
+                self.videos = response.videos
+                try? self.realmManager.saveVideos(videos: self.videos)
+                self.isLoading = false
+                self.errorMessage = nil
+                self.returnedError = false
+            case .failure:
+                self.isLoading = false
+                self.returnedError = true
+                self.errorMessage = "Please check your internet connection and try again."
             }
         }
     }

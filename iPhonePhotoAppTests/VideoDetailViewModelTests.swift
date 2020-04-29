@@ -24,13 +24,4 @@ class VideoDetailViewModelTests: XCTestCase {
         XCTAssertEqual(sut.getCurrentVideo(), nil)
     }
 
-    func testDownloadVideoSuccess() {
-        mockAPIManager.completeVideos = VideoResponse(videos: testData)
-        sut.downloadVideo()
-        mockAPIManager.fetchSuccess()
-    }
-
-    func testDownloadVideoFailure() {
-    }
-
 }

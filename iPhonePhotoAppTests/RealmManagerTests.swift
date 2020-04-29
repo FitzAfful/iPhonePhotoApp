@@ -8,18 +8,25 @@
 
 import XCTest
 @testable import iPhonePhotoApp
+@testable import RealmSwift
 
 class RealmManagerTests: XCTestCase {
 
     var sut: RealmManager!
 
     override func setUpWithError() throws {
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        let config = Realm.Configuration(inMemoryIdentifier: self.name)
+        let testRealm = try! Realm(configuration: config)
         sut = RealmManager()
+        sut.realm = testRealm
     }
 
     func testSaveAndFetchVideos() throws {
         let requestExpectation = expectation(description: "Save and Retrieve saved Videos")
         do {
+            try sut.clearVideos()
+            
             try sut.saveVideos(videos: testData)
 
             try sut.fetchVideos { (result) in

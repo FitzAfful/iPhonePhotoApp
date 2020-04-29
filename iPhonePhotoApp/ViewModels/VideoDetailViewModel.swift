@@ -42,6 +42,9 @@ class VideoDetailViewModel: ObservableObject {
         downloadManager.$errorMessage.sink { (value) in
             self.downloadErrorMessage = value
             self.downloadReturnedError = value != nil
+            if value != nil {
+                self.isDownloading = false
+            }
         }.store(in: &cancellable)
     }
 }

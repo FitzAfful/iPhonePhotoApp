@@ -43,6 +43,7 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
     func downloadVideo(video: VideoItem) {
         self.errorMessage = nil
         self.percentage = 0.0
+        self.currentVideo = video
 
         let url = URL(string: video.videoLink)!
         let options = [
@@ -52,7 +53,6 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
         let asset = AVURLAsset(url: url, options: options)
         downloadTask = downloadSession?.makeAssetDownloadTask(asset: asset, assetTitle: video.name, assetArtworkData: nil, options: nil)
         downloadTask?.resume()
-        self.currentVideo = video
     }
 
     func cancelDownload(video: VideoItem) {
@@ -64,6 +64,8 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
 
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         errorMessage = error?.localizedDescription
+        self.errorMessage = nil
+        self.percentage = 0.0
         self.currentVideo = nil
     }
 
@@ -78,10 +80,9 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
     }
 
     public func urlSession(_ session: URLSession, assetDownloadTask: AVAssetDownloadTask, didFinishDownloadingTo location: URL) {
-        print("finish downloading: \(location)")
         if assetDownloadTask.error != nil { return }
         if let video = currentVideo {
-            try? self.dataManager?.updateVideo(video: video, downloadLocation: location.absoluteString)
+            try? self.dataManager?.updateVideo(video: video, downloadLocation: location.relativePath)
         }
         self.currentVideo = nil
         self.errorMessage = nil

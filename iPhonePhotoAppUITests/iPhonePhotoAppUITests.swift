@@ -25,6 +25,14 @@ class iPhonePhotoAppUITests: XCTestCase {
         XCTAssert(labelElement.exists)
     }
 
+    func testDownloadStart() throws {
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["3 Quick Ways To Open The iPhone Camera App"]/*[[".cells.buttons[\"3 Quick Ways To Open The iPhone Camera App\"]",".buttons[\"3 Quick Ways To Open The iPhone Camera App\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCUIApplication().navigationBars.buttons["Download video"].tap()
+        let progressView: XCUIElement = { return XCUIApplication().otherElements["progressBar"] }()
+        XCTAssert(progressView.exists)
+    }
     
 
 

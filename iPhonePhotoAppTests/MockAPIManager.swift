@@ -26,27 +26,18 @@ class MockApiManager: DataManagerProtocol {
     }
 
     func fetchFail() {
-        completeClosure(Result.failure(AFError.sessionTaskFailed(error: RuntimeError.FetchFailed)))
+        let result = Result<VideoResponse, AFError>.failure(AFError.explicitlyCancelled)
+        completeClosure(result)
     }
 
-    func saveVideos(videos: [VideoItem]) throws {
+    func saveVideos(videos: [VideoItem]) throws {}
 
-    }
+    func downloadVideo(video: VideoItem) {}
 
-    func downloadVideo(video: VideoItem) {
+    func getCurrentDownload() -> VideoItem? { return nil }
 
-    }
+    func updateVideo(video: VideoItem, downloadLocation: String) throws {}
 
-    func getCurrentDownload() -> VideoItem? {
-        return nil
-    }
-
-    func updateVideo(video: VideoItem, downloadLocation: String) throws {
-
-    }
-
-    func getDownloadedLocation(video: VideoItem) throws -> String? {
-        return nil
-    }
+    func getDownloadedLocation(video: VideoItem) throws -> String? { return nil }
 
 }
