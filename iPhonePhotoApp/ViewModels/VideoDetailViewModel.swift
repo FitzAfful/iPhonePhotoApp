@@ -23,6 +23,7 @@ class VideoDetailViewModel: ObservableObject {
     @Published var progress: CGFloat = 0.0
     @Published var downloadErrorMessage: String?
     @Published var downloadReturnedError: Bool = false
+    @Published var finishedDownloading: Bool = false
 
     var downloadManager: DownloadManager?
     var dataManager: DataManagerProtocol? = RealmManager.shared
@@ -30,12 +31,16 @@ class VideoDetailViewModel: ObservableObject {
 
     init(downloadManager: DownloadManager = DownloadManager.shared) {
         self.isDownloading = false
+        self.finishedDownloading = false
+
         self.downloadManager = downloadManager
         downloadManager.$percentage.sink { (value) in
             if self.getCurrentVideo() == self.video && self.getCurrentVideo() != nil {
                 self.isDownloading = true
                 self.progress = CGFloat(value)
-                print("\(value)%")
+                if self.progress == 100.0 {
+                    self.finishedDownloading = true
+                }
             }
         }.store(in: &cancellable)
 

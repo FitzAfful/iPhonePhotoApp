@@ -79,7 +79,9 @@ struct VideoDetailView: View {
                 return Alert(title: Text("Download Error"), message: Text("\(videoName) " + self.viewModel.downloadErrorMessage!), dismissButton: .default(Text("Okay"), action: {
                     self.viewModel.downloadReturnedError = false
                 }))
-            }
+            }.alert(isPresented: $viewModel.finishedDownloading, content: { () -> Alert in
+                Alert(title: Text("Download Finished"), message: Text("Video has successfully downloaded."), dismissButton: .default(Text("Okay")))
+            })
         )
     }
 }
