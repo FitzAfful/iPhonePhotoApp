@@ -31,23 +31,30 @@ class VideoListViewModel: ObservableObject {
 extension VideoListViewModel: VideoListViewModelProtocol {
     func fetchVideos() {
         isLoading = true
+        var delayTimer = 0.0
         try? realmManager.fetchVideos { (result) in
             if let realmVideos = try? result.get().videos {
                 self.videos = realmVideos
+                if !videos.isEmpty {
+                    delayTimer = 3.0
+                }
             }
         }
-        try? dataManager.fetchVideos { (result) in
-            switch result {
-            case .success(let response):
-                self.videos = response.videos
-                try? self.realmManager.saveVideos(videos: self.videos)
-                self.isLoading = false
-                self.errorMessage = nil
-                self.returnedError = false
-            case .failure:
-                self.isLoading = false
-                self.returnedError = true
-                self.errorMessage = "Please check your internet connection and try again."
+        
+        UtilityHelper().delay(delayTimer) {
+            try? self.dataManager.fetchVideos { (result) in
+                switch result {
+                case .success(let response):
+                    self.videos = response.videos
+                    try? self.realmManager.saveVideos(videos: self.videos)
+                    self.isLoading = false
+                    self.errorMessage = nil
+                    self.returnedError = false
+                case .failure:
+                    self.isLoading = false
+                    self.returnedError = true
+                    self.errorMessage = "Please check your internet connection and try again."
+                }
             }
         }
     }

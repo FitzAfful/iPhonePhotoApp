@@ -32,7 +32,25 @@ public class RealmManager: NSObject, DataManagerProtocol {
     func saveVideos(videos: [VideoItem]) throws {
         guard let myRealm = realm else { throw  RuntimeError.NoRealmSet }
         try? myRealm.write {
-            myRealm.add(videos, update: .all)
+            myRealm.add(videos, update: .modified)
         }
+    }
+
+    func updateVideo(video: VideoItem, downloadLocation: String) throws {
+        guard let myRealm = realm else { throw  RuntimeError.NoRealmSet }
+        try? myRealm.write {
+            let downloadedVideo = DownloadedVideo(id: video.id, downloadLocation: downloadLocation)
+            myRealm.add(downloadedVideo, update: .modified)
+        }
+    }
+
+    func getDownloadedLocation(video: VideoItem) throws -> String? {
+        guard let myRealm = realm else { throw  RuntimeError.NoRealmSet }
+        if let dlVideo = myRealm.objects(DownloadedVideo.self).filter({ (vid) -> Bool in
+            return vid.id == video.id
+        }).first {
+            return dlVideo.downloadLocation
+        }
+        return nil
     }
 }

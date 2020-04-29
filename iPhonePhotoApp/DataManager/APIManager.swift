@@ -15,6 +15,8 @@ typealias FetchVideosCompletionHandler = (_ videoResponse: Result<VideoResponse,
 protocol DataManagerProtocol {
     func fetchVideos(completionHandler: @escaping FetchVideosCompletionHandler) throws
     func saveVideos(videos: [VideoItem]) throws
+    func updateVideo(video: VideoItem, downloadLocation: String) throws
+    func getDownloadedLocation(video: VideoItem) throws -> String?
 }
 
 public class APIManager: NSObject, DataManagerProtocol {
@@ -32,7 +34,9 @@ public class APIManager: NSObject, DataManagerProtocol {
         }
     }
 
-    func saveVideos(videos: [VideoItem]) {
+    func saveVideos(videos: [VideoItem]) {}
 
-    }
+    func updateVideo(video: VideoItem, downloadLocation: String) {}
+
+    func getDownloadedLocation(video: VideoItem) throws -> String? { return nil }
 }

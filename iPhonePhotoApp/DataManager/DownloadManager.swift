@@ -22,15 +22,18 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
 
     private var configuration: URLSessionConfiguration?
     private var downloadSession: AVAssetDownloadURLSession?
+    private var dataManager: DataManagerProtocol?
     private var downloadIdentifier = "\(Bundle.main.bundleIdentifier!).background"
     private var currentVideo: VideoItem?
     private var downloadTask: AVAssetDownloadTask?
     @Published var percentage = 0.0
+    @Published var errorMessage: String?
 
-    override init() {
+    init(dataManager: DataManagerProtocol = RealmManager.shared) {
         super.init()
         configuration = URLSessionConfiguration.background(withIdentifier: downloadIdentifier)
         downloadSession = AVAssetDownloadURLSession(configuration: configuration!, assetDownloadDelegate: self, delegateQueue: OperationQueue.main)
+        self.dataManager = dataManager
     }
 
     func getCurrentDownload() -> VideoItem? {
@@ -38,8 +41,10 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
     }
 
     func downloadVideo(video: VideoItem) {
+        self.errorMessage = nil
+        self.percentage = 0.0
+
         let url = URL(string: video.videoLink)!
-        print(url)
         let options = [
             AVURLAssetPreferPreciseDurationAndTimingKey: true,
             AVURLAssetReferenceRestrictionsKey: 0
@@ -58,26 +63,28 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
     }
 
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("Completed with error: \(error?.localizedDescription ?? "")")
+        errorMessage = error?.localizedDescription
         self.currentVideo = nil
     }
 
     public func urlSession(_ session: URLSession, assetDownloadTask: AVAssetDownloadTask, didLoad timeRange: CMTimeRange, totalTimeRangesLoaded loadedTimeRanges: [NSValue], timeRangeExpectedToLoad: CMTimeRange) {
-        print("didload")
         var percentComplete = 0.0
         for value in loadedTimeRanges {
             let loadedTimeRange = value.timeRangeValue
             percentComplete += loadedTimeRange.duration.seconds / timeRangeExpectedToLoad.duration.seconds
         }
         percentComplete *= 100
-        debugPrint("Progress \( assetDownloadTask) \(percentComplete)")
         self.percentage = percentComplete
     }
 
     public func urlSession(_ session: URLSession, assetDownloadTask: AVAssetDownloadTask, didFinishDownloadingTo location: URL) {
         print("finish downloading: \(location)")
-        UserDefaults.standard.set(location.relativePath, forKey: "testVideoPath")
+        if assetDownloadTask.error != nil { return }
+        if let video = currentVideo {
+            try? self.dataManager?.updateVideo(video: video, downloadLocation: location.absoluteString)
+        }
         self.currentVideo = nil
+        self.errorMessage = nil
     }
 
 }

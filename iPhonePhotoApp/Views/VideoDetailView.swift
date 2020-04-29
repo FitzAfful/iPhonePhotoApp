@@ -20,7 +20,7 @@ struct VideoDetailView: View {
     var body: some View {
         VStack {
             ProgressBar(progress: $viewModel.progress)
-                .frame(width: 300, height: 4.0).isHidden($viewModel.isDownloading.wrappedValue)
+                .frame(width: 300, height: 4.0).isHidden(!self.viewModel.isDownloading)
             ZStack {
                 image.view?
                     .resizable()
@@ -29,7 +29,11 @@ struct VideoDetailView: View {
                     .clipped()
 
                 Button(action: {
-                    self.videoURL = URL(string: self.viewModel.getVideo().videoLink)!
+                    if let link = self.viewModel.getDownloadedVideoLocation() {
+                        self.videoURL = URL(string: link)!
+                    } else {
+                        self.videoURL = URL(string: self.viewModel.getVideo().videoLink)!
+                    }
                     self.showVideoPlayer = true
                 }) {
                     Image("play")
@@ -64,6 +68,10 @@ struct VideoDetailView: View {
                 }
             }.alert(isPresented: $showingAlert) {
                 Alert(title: Text("Error"), message: Text("Video is being downloaded. Please hold on."), dismissButton: .default(Text("Okay")))
+            }.alert(isPresented: $viewModel.downloadReturnedError) { () -> Alert in
+                Alert(title: Text("Download Error"), message: Text("\(self.viewModel.getCurrentVideo()!.name): " + self.viewModel.downloadErrorMessage!), dismissButton: .default(Text("Okay"), action: {
+                    self.viewModel.downloadReturnedError = false
+                }))
             }
         )
     }
