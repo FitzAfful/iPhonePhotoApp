@@ -16,7 +16,8 @@ class VideoDetailViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         mockAPIManager = MockApiManager()
-        sut = VideoDetailViewModel(dataManager: mockAPIManager)
+        sut = VideoDetailViewModel(downloadManager: DownloadManager())
+        sut.dataManager = mockAPIManager
     }
 
     func testGetCurrentVideo() {

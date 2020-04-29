@@ -11,6 +11,7 @@ import Foundation
 @testable import Alamofire
 
 class MockApiManager: DataManagerProtocol {
+
     var completeVideos: VideoResponse = VideoResponse(videos: [VideoItem]())
     var isFetchVideosCalled = false
     var completeClosure: FetchVideosCompletionHandler!
@@ -37,6 +38,14 @@ class MockApiManager: DataManagerProtocol {
     }
 
     func getCurrentDownload() -> VideoItem? {
+        return nil
+    }
+
+    func updateVideo(video: VideoItem, downloadLocation: String) throws {
+
+    }
+
+    func getDownloadedLocation(video: VideoItem) throws -> String? {
         return nil
     }
 

@@ -41,4 +41,23 @@ class RealmManagerTests: XCTestCase {
         wait(for: [requestExpectation], timeout: 10.0)
     }
 
+    func testUpdateAndFetchDownloadedVideoLocation() throws {
+        let testLocation = "file:///private/var/mobile/Containers/Data/Application/3DA266C4-2A85-46AC-BE7A-3C97DC288E76/"
+        let requestExpectation = expectation(description: "Save and Retrieve saved Video Location")
+        do {
+            try sut.updateVideo(video: testData[0], downloadLocation: testLocation)
+
+            let retrievedLocation = try sut.getDownloadedLocation(video: testData[0])
+
+            XCTAssertEqual(testLocation, retrievedLocation)
+            requestExpectation.fulfill()
+        } catch RuntimeError.NoRealmSet {
+            XCTAssert(false, "No realm DB was set")
+        } catch  {
+            XCTAssert(false, "Unexpected Error: \(error)")
+        }
+
+        wait(for: [requestExpectation], timeout: 10.0)
+    }
+
 }
