@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol VideoDetailViewModelProtocol {
     func downloadVideo()
@@ -17,6 +18,8 @@ protocol VideoDetailViewModelProtocol {
 
 class VideoDetailViewModel: ObservableObject {
     @Published var video: VideoItem?
+    @Published var isDownloading: Bool = false
+    @Published var progress: CGFloat = 0.0
 
     var downloadManager: DownloadManager!
 
@@ -24,7 +27,8 @@ class VideoDetailViewModel: ObservableObject {
         self.downloadManager = downloadManager
         _ = downloadManager.$percentage.sink { (value) in
             if self.getCurrentVideo() == self.video && self.getCurrentVideo() != nil {
-                //update progressbar
+                self.isDownloading = true
+                self.progress = CGFloat(value)
                 print("\(self.video!.name) - \(value)%")
             }
         }
@@ -38,7 +42,9 @@ extension VideoDetailViewModel: VideoDetailViewModelProtocol {
     }
 
     func cancelDownload() {
-
+        guard let myVideo = self.video else { return }
+        downloadManager.cancelDownload(video: myVideo)
+        isDownloading = false
     }
 
     func getCurrentVideo() -> VideoItem? {

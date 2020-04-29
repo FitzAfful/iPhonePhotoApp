@@ -13,6 +13,7 @@ import Combine
 
 protocol DownloadManagerProtocol {
     func downloadVideo(video: VideoItem)
+    func cancelDownload(video: VideoItem)
     func getCurrentDownload() -> VideoItem?
 }
 
@@ -23,6 +24,7 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
     private var downloadSession: AVAssetDownloadURLSession?
     private var downloadIdentifier = "\(Bundle.main.bundleIdentifier!).background"
     private var currentVideo: VideoItem?
+    private var downloadTask: AVAssetDownloadTask?
     @Published var percentage = 0.0
 
     override init() {
@@ -43,13 +45,20 @@ public class DownloadManager: NSObject, AVAssetDownloadDelegate, ObservableObjec
             AVURLAssetReferenceRestrictionsKey: 0
             ] as [String: Any]
         let asset = AVURLAsset(url: url, options: options)
-        let downloadTask = downloadSession?.makeAssetDownloadTask(asset: asset, assetTitle: video.name, assetArtworkData: nil, options: nil)
+        downloadTask = downloadSession?.makeAssetDownloadTask(asset: asset, assetTitle: video.name, assetArtworkData: nil, options: nil)
         downloadTask?.resume()
         self.currentVideo = video
     }
 
+    func cancelDownload(video: VideoItem) {
+        if let item = downloadTask {
+            item.cancel()
+            self.currentVideo = nil
+        }
+    }
+
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("Completed with error: \(error)")
+        print("Completed with error: \(error?.localizedDescription ?? "")")
         self.currentVideo = nil
     }
 

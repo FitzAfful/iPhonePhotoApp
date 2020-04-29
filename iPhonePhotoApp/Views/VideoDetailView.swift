@@ -19,27 +19,8 @@ struct VideoDetailView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(Color.gray)
-                        .opacity(0.3)
-                        .frame(width: 345.0, height: 8.0)
-                    Rectangle()
-                        .foregroundColor(Color.blue)
-                        .frame(width: 200.0, height: 8.0)
-                }
-                Button(action: {
-                    if self.viewModel.getCurrentVideo() != nil {
-                        self.showingAlert = true
-                    } else {
-                        self.viewModel.downloadVideo()
-                    }
-                }) {
-                    Text("Cancel Download")
-                }
-            }
-            .cornerRadius(4.0)
+            ProgressBar(progress: $viewModel.progress)
+                .frame(width: 300, height: 4.0).isHidden($viewModel.isDownloading.wrappedValue)
             ZStack {
                 image.view?
                     .resizable()
@@ -65,18 +46,25 @@ struct VideoDetailView: View {
             Spacer()
         }.onAppear(perform: image.fetch).onDisappear(perform: image.cancel).padding(10.0).navigationBarTitle("", displayMode: .inline).navigationBarItems(trailing:
             Button(action: {
-                if self.viewModel.getCurrentVideo() != nil {
-                    self.showingAlert = true
+                if self.viewModel.isDownloading {
+                    self.viewModel.cancelDownload()
                 } else {
-                    self.viewModel.downloadVideo()
+                    if self.viewModel.getCurrentVideo() != nil {
+                        self.showingAlert = true
+                    } else {
+                        self.viewModel.downloadVideo()
+                    }
                 }
             }) {
-                Text("Download video")
-                Image(systemName: "square.and.arrow.down")
+                if viewModel.isDownloading {
+                    Text("Cancel Download")
+                } else {
+                    Text("Download video")
+                    Image(systemName: "square.and.arrow.down")
+                }
             }.alert(isPresented: $showingAlert) {
                 Alert(title: Text("Error"), message: Text("Video is being downloaded. Please hold on."), dismissButton: .default(Text("Okay")))
             }
         )
     }
 }
-
