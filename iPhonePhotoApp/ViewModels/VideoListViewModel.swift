@@ -35,12 +35,12 @@ extension VideoListViewModel: VideoListViewModelProtocol {
         try? realmManager.fetchVideos { (result) in
             if let realmVideos = try? result.get().videos {
                 self.videos = realmVideos
-                if !videos.isEmpty {
+                if !self.videos.isEmpty {
                     delayTimer = 3.0
                 }
             }
         }
-        
+
         UtilityHelper().delay(delayTimer) {
             try? self.dataManager.fetchVideos { (result) in
                 switch result {
